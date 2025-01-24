@@ -1,0 +1,178 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #500805;
+    color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background: #1E0000;
+    color: #f0f0f0;
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+button {
+    background: #BC6D4F;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background: #9D331F;
+}
+
+section {
+    display: none;
+    padding: 20px;
+    margin: 10px auto;
+    background: #fff;
+    color: #333;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+}
+
+section.visible {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.close-btn {
+    margin-top: 20px;
+    background: #333;
+    color: white;
+    padding: 8px 12px;
+    font-size: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.service-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.service-card h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.service-image {
+    background: #f4f4f4;
+    height: 100px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-size: cover;
+    background-position: center;
+}
+
+.service-card p {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    margin-top: auto;
+    width: 100%;
+    position: relative;
+    height: 40px;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    nav ul {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    section {
+        width: 100%; 
+    }
+
+    .service-card {
+        width: calc(33.333% - 20px); /* Пропорционально уменьшена ширина */
+        margin-bottom: 20px; /* Добавлены отступы снизу для карточек */
+    }
+
+    .services-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .service-card h3 {
+        font-size: 16px; /* Уменьшение размера шрифта на мобильных */
+    }
+
+    .service-card p {
+        font-size: 12px; /* Уменьшение размера шрифта для лучшего отображения */
+    }
+}
+
+/* Дополнительный стиль для очень маленьких экранов */
+@media (max-width: 480px) {
+    .service-card {
+        width: 100%; /* На экранах меньше 480px карточки будут занимать всю ширину */
+        margin-bottom: 15px;
+    }
+}
